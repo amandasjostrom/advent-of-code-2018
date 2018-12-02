@@ -1,12 +1,12 @@
-package main
+package day2
 
 import (
 	"strings"
 	"fmt"
-	"../common"
+	"amandasjostrom.se/common"
 )
 
-func main() {
+func Run() {
 	boxIds := common.GetInput(2, "\n")
 	fmt.Println("Checksum: ", part1(boxIds))
 	fmt.Print("FOUND IT: ", part2(boxIds))
@@ -52,7 +52,7 @@ func part1(boxIds []string) int {
 		foundTwo := false
 		foundThree := false
 		for _, letter := range letters {
-			number := numberOfInstances(letter, letters)
+			number := common.NumberOfOccurences(letter, letters)
 			if number == 2 {
 				foundTwo = true
 			} else if number == 3 {
@@ -68,14 +68,5 @@ func part1(boxIds []string) int {
 	}
 	fmt.Println("Sum duplicates: ", sumExactlyTwo, "; Sum triplets: ", sumExactlyThree)
 	return sumExactlyTwo * sumExactlyThree
-}
-
-func numberOfInstances(letterToFind string, letters []string) (sum int) {
-	for _, letter := range letters {
-		if letter == letterToFind {
-			sum = sum + 1
-		}
-	}
-	return
 }
 
