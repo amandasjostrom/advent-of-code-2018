@@ -21,5 +21,5 @@ func FromFile(filename string, separator string) (values []string) {
 
 func GetInput(day int, separator string) []string {
 	absolutePath, _ := os.Getwd()
-	return FromFile(absolutePath+"/src/github.com/amandasjostrom/advent-of-code-2018/day"+strconv.Itoa(day)+"/input.txt", separator)
+	return FromFile(absolutePath+"/day"+strconv.Itoa(day)+"/input.txt", separator)
 }
