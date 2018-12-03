@@ -13,13 +13,13 @@ func Run() {
 	for ; ; {
 		sum+= values[index]
 		if !foundFirstPart && index == len (values)-1{
-			fmt.Println("Answer part one: ", sum)
+			fmt.Println("DAY 1 Answer part one: ", sum)
 			foundFirstPart = true
 		}
 		index = common.GetNextIndex(index, len(values))
 
 		if seenFrequency(seenFrequencies, sum){
-			fmt.Print("Seen this before! Answer part two: ", sum)
+			fmt.Println("DAY 1 Seen this before! Answer part two: ", sum)
 			break
 		}
 		seenFrequencies = append(seenFrequencies, sum)

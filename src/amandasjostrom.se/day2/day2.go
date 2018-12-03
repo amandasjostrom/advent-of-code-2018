@@ -8,8 +8,8 @@ import (
 
 func Run() {
 	boxIds := common.GetInput(2, "\n")
-	fmt.Println("Checksum: ", part1(boxIds))
-	fmt.Print("FOUND IT: ", part2(boxIds))
+	fmt.Println("DAY 2 Checksum: ", part1(boxIds))
+	fmt.Println("DAY 2 FOUND IT: ", part2(boxIds))
 }
 
 func part2(boxIds []string) string {
