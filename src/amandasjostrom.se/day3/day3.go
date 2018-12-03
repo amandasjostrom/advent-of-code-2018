@@ -34,8 +34,7 @@ func markClaimsOnFabric(claims []Claim) map[string]int {
 func markSquareOnFabric(claim Claim, x int, y int, fabric map[string]int) {
 	currentX := claim.startX + x
 	currentY := claim.startY + y
-	key := strconv.Itoa(currentX) + "+" + strconv.Itoa(currentY)
-	fabric[key]++
+	fabric[key(currentX, currentY)]++
 }
 
 func squareInchesUsedByMultipleClaims(fabric map[string]int) (sum int) {
@@ -61,11 +60,15 @@ func isOverLapping(claim Claim, fabric map[string]int) bool {
 		for y := 0; y < claim.height; y++ {
 			currentX := claim.startX + x
 			currentY := claim.startY + y
-			key := strconv.Itoa(currentX) + "+" + strconv.Itoa(currentY)
-			if fabric[key] > 1 {
+			if fabric[key(currentX, currentY)] > 1 {
 				return true
 			}
 		}
 	}
 	return false
 }
+
+func key(x int, y int) string {
+	return strconv.Itoa(x) + "+" + strconv.Itoa(y)
+}
+

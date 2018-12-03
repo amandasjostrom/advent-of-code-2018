@@ -8,8 +8,8 @@ import (
 
 func main(){
 	//runDay1()
-	//runDay2()
-	runDay3()
+	runDay2()
+	//runDay3()
 }
 
 func runDay1() {

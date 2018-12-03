@@ -45,14 +45,12 @@ func hasMoreThanOneDiff(box1 string, box2 string) (moreThanOneDiff bool, charact
 }
 
 func part1(boxIds []string) int {
-	sumExactlyTwo := int(0)
-	sumExactlyThree := int(0)
+	sumExactlyTwo, sumExactlyThree := 0, 0
 	for _, id := range boxIds {
 		letters := strings.Split(id, "")
-		foundTwo := false
-		foundThree := false
+		foundTwo, foundThree := false, false
 		for _, letter := range letters {
-			number := common.NumberOfOccurences(letter, letters)
+			number := strings.Count(id, string(letter))
 			if number == 2 {
 				foundTwo = true
 			} else if number == 3 {
