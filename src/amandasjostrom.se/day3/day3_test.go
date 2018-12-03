@@ -51,8 +51,8 @@ func Test_markOnFabric(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := markOnFabric(tt.args.claims); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("markOnFabric() = %v, want %v", got, tt.want)
+			if got := markClaimsOnFabric(tt.args.claims); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("markClaimsOnFabric() = %v, want %v", got, tt.want)
 			}
 		})
 	}
