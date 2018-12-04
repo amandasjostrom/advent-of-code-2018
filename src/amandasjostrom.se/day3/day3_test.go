@@ -3,7 +3,12 @@ package day3
 import (
 	"reflect"
 	"testing"
+	"amandasjostrom.se/common"
 )
+
+func TestRun(t *testing.T) {
+	common.TestRun(t,"\n", Run,105047, "#658")
+}
 
 func Test_claims(t *testing.T) {
 	type args struct {

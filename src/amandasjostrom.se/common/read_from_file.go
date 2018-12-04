@@ -23,3 +23,8 @@ func GetInput(day int, separator string) []string {
 	absolutePath, _ := os.Getwd()
 	return FromFile(absolutePath+"/src/amandasjostrom.se/day"+strconv.Itoa(day)+"/input.txt", separator)
 }
+
+func GetTestInput(separator string) []string {
+	absolutePath, _ := os.Getwd()
+	return FromFile(absolutePath+"/input.txt", separator)
+}

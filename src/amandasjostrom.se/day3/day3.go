@@ -6,17 +6,14 @@ import (
 	"strconv"
 )
 
-//EXPECTED:
-//DAY 3, PART 1:  105047
-//DAY 3, PART 2:  #658
-
-func Run() {
-	claims := claims(common.GetInput(3, "\n"))
+func Run(input []string) common.Result {
+	claims := claims(input)
 	fabric := markClaimsOnFabric(claims)
 	squareInchesUsedByMultipleClaims := squareInchesUsedByMultipleClaims(fabric)
 	fmt.Println("DAY 3, PART 1: ", squareInchesUsedByMultipleClaims)
 	partTwoId := idOfNonOverlappingClaim(claims, fabric)
 	fmt.Println("DAY 3, PART 2: ", partTwoId)
+	return common.Result{squareInchesUsedByMultipleClaims, partTwoId}
 }
 
 func markClaimsOnFabric(claims []Claim) map[string]int {

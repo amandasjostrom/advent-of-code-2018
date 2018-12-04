@@ -6,10 +6,12 @@ import (
 	"amandasjostrom.se/common"
 )
 
-func Run() {
-	boxIds := common.GetInput(2, "\n")
-	fmt.Println("DAY 2 Checksum: ", part1(boxIds))
-	fmt.Println("DAY 2 FOUND IT: ", part2(boxIds))
+func Run(boxIds []string) common.Result {
+	part1 := part1(boxIds)
+	fmt.Println("DAY 2 Checksum: ", part1)
+	part2 := part2(boxIds)
+	fmt.Println("DAY 2 FOUND IT: ", part2)
+	return common.Result{part1, part2}
 }
 
 func part2(boxIds []string) string {

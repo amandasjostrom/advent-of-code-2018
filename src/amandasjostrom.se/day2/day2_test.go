@@ -2,7 +2,12 @@ package day2
 
 import (
 	"testing"
+	"amandasjostrom.se/common"
 )
+
+func TestRun(t *testing.T) {
+	common.TestRun(t,"\n", Run,5928, "bqlporuexkwzyabnmgjqctvfs")
+}
 
 func Test_hasMoreThanOneDiff(t *testing.T) {
 	type args struct {
