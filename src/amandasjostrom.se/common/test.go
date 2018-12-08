@@ -12,7 +12,7 @@ func TestRun(t *testing.T, separator string, run runner, part1 interface{}, part
 }
 
 func test(t *testing.T, separator string, run runner, want Result ) {
-	if got := run(GetTestInput(separator)); !reflect.DeepEqual(got, want) {
+	if got := run(GetRealInputFromTest(separator)); !reflect.DeepEqual(got, want) {
 		t.Errorf("Run() = %v, want %v", got, want)
 	}
 }
