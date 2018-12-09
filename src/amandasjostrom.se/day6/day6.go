@@ -14,18 +14,20 @@ type Coordinate struct {
 }
 
 func Run(input []string) common.Result {
+	originals, largestX, largestY := parse(input)
 	var sizePerId = map[string]int{}
 	var infiniteIds = map[string]bool{}
 	var grid = map[string]string{}
-	originals, largestX, largestY := parse(input)
-
+	sizeOfRegion := 0
 	for x := 0; x <= largestX; x++ {
 		for y := 0; y <= largestY; y++ {
+			sum := 0
 			nearest := Coordinate{0, 0, "0"}
 			minDistance := 9999
 			onlyOneFound := true
 			for _, value := range originals {
 				distance := getManhattan(value, x, y)
+				sum+=distance
 				if distance < minDistance {
 					onlyOneFound = true
 					minDistance = distance
@@ -45,6 +47,9 @@ func Run(input []string) common.Result {
 			} else {
 				grid[key] = "."
 			}
+			if sum < 10000 {
+				sizeOfRegion++
+			}
 		}
 	}
 	fmt.Println("Dessa var på gränsen: ", infiniteIds)
@@ -63,7 +68,7 @@ func Run(input []string) common.Result {
 	}
 
 	fmt.Println("Ehmm jag hittade detta på part 1 men bli inte arg om det är fel, okej...? Bra! Här: ", largestSize)
-	return common.Result{largestSize, 0}
+	return common.Result{largestSize, sizeOfRegion}
 }
 func toKey(x int, y int) string {
 	return strconv.Itoa(x) + "+" + strconv.Itoa(y)
