@@ -6,15 +6,15 @@ import (
 	"amandasjostrom.se/day3"
 	"amandasjostrom.se/common"
 	"amandasjostrom.se/day6"
-	"amandasjostrom.se/day6"
+	"amandasjostrom.se/day11"
 )
 
 func main(){
 	//runDay1()
 	//runDay2()
 	//runDay3()
-	runDay6_3()
 	//runDay6()
+	runDay11()
 }
 
 func runDay1() {
@@ -31,6 +31,6 @@ func runDay3() {
 func runDay6() {
 	day6.Run(common.GetInput(6, "\n"))
 }
-func runDay6_3() {
-	day6.Run(common.GetInput(6, "\n"))
+func runDay11() {
+	day11.Run(common.GetInput(11, "\n"))
 }
